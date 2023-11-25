@@ -2,7 +2,7 @@
 title: Personalize your avatars
 description: Represent yourself in Mesh events as an avatar
 ms.service: mesh
-author: qianw211    
+author: qianw211
 ms.author: qianwen
 ms.date: 10/7/2023
 ms.topic: Guide
@@ -25,7 +25,7 @@ You can access avatar customization from the following entry points:
 * Mesh app on PC
 * Mesh app on Quest
 
-You can create up to three different versions of your avatar to show off your personas in Mesh experiences. 
+You can create up to three different versions of your avatar to show off your personas in Mesh experiences.
 
 To create a new avatar, select **+** after clicking the **Profiles** button in the lower right corner of your Mesh App. You can also click on any of the existing avatars you have previously built to start [customizing](#customize-your-avatars).
 
@@ -39,7 +39,7 @@ Select your desired avatar that looks closest to you and click **Use Avatar**. Y
 
 ## Customize your avatars
 
-Once you're inside Mesh, hover over your **Profile** bubble and select **Customize** to start customizing your avatar at any time. 
+Once you're inside Mesh, hover over your **Profile** bubble and select **Customize** to start customizing your avatar at any time.
 
 ![A screenshot of the Profile menu highlighting the customize button](media/profile-customize.png)
 
