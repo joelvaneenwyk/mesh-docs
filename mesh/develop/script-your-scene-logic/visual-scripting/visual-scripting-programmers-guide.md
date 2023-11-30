@@ -66,13 +66,13 @@ There's some automatic update rate limiting. A client doesn't send additional up
 
 Eventual consistency of shared state is guaranteed (even if clients' states can temporarily be different).
 
-Local state:
+#### Local state
 
 - Natural local state – sounds, UI, rendering.
 - User-controlled local state – sub-scenes marked with the **Local Script Scope** component.
 - Technical local state – objects that aren't part of the scene hierarchy (for example, renderer materials, assets).
 
-Shared state:
+#### Shared state
 
 - Limited to visual script variables and the properties of GameObjects and scene components that are part of the scene hierarchy.
 - Only variables and properties of simple types can be replicated: integers, floating-point numbers, booleans, strings, `Color`, `Vector2`/`3`/`4`, `Quaternion`, `Matrix4x4`, and `Rect`.
@@ -106,25 +106,17 @@ Visual scripts are significantly slower than native C# code. In addition, Mesh a
 Performance issues in visual scripts are almost always caused by the scripts doing high-frequency updates of variables or component properties that are shared by default.
 
 - Do use **Local Script Scope** components liberally to make sure only variables and component properties that _need_ to be synchronized across clients incur networking overhead. Anything animated locally with a visual script should not be shared.
-
 - Do use the **On State Changed** script trigger to start script flows in response to changing variables or component properties. This works both for local and shared state. It's also the recommended way to synchronize local animations.
-
 - Do use the **On Interval** script trigger instead of a high-frequency trigger like **On Update** to start script flows in controllable, regular intervals.
 
 Things to be aware of:
 
 - Whenever possible, avoid triggering visual scripts every frame. Instead of using **On Update**, use **On State Changed** or **On Interval**.
-
 - If you must trigger a visual script every frame, do it on as few objects as possible.
-
 - Don't update shared properties at high frequency. Instead, consider making high-frequency updated properties local by using the **Local Script Scope** component. Remember that visual script variables are also shared by default!
-
 - Don't use object variables if flow variables would work.
-
 - Avoid updating shared properties or variables in visual scripts that are triggered simultaneously on all clients.
-
 - Avoid setting physics properties (transform and velocity) on the same physics body on multiple clients at the same time. This can easily happen by accident in visual scripts that respond to shared scene change triggers.
-
 - Don't try to fix performance problems by consolidating several script flows that work on individual objects into a single script flow that works on many objects. The overhead of starting a script flow is negligible, and the added complexity you have to add to consolidate your script may very well negate any slight performance benefit you might get from reducing the number of ScriptMachines.
 
 **Tips**
@@ -145,7 +137,7 @@ Things to be aware of:
 
 - To do something in regular time intervals in sync across clients, use the **On Interval** trigger node.
 - To do something in response to certain component properties or visual script variables changing (for example, because this or some other client was setting them in a visual script), use the **On State Changed** trigger
-- There are additional Visual Scripting functions provided by Mesh&#8212;see the _Microsoft_ > _Mesh_ and _Microsoft_ > _Events_ > _Mesh_ sections in the Fuzzy Finder.
+- There are additional Visual Scripting functions provided by Mesh&mdash;see the _Microsoft_ > _Mesh_ and _Microsoft_ > _Events_ > _Mesh_ sections in the Fuzzy Finder.
 
 ## Security
 
