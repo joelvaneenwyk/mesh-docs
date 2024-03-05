@@ -13,7 +13,7 @@ keywords: Microsoft Mesh, Web content, Web, webslate, URL, video, streaming vide
 
 ![A screenshot of a Mesh experience with a WebSlate on the wall showing a map.](../../media/webview-developer-guide/image003.png)
 
-Use WebSlate to display interactive web content in your 3D Mesh environment. Get a full browsing experience on PC or Quest 2 with intuitive input, customizability, security, and performance management. 
+Use WebSlate to display interactive web content in your 3D Mesh environment. Get a full browsing experience on PC or Quest 2 with intuitive input, customizability, security, and performance management.
 
 You can use WebSlates for:
 
@@ -37,7 +37,7 @@ You can use WebSlates for:
 
 - **[Content Performance Analyzer tool](../debug-and-optimize-performance/cpa.md) integration:** Measure the average time it takes for URP to render WebSlates in a frame and find content loading issues.
 
-- **Testing in Mesh Emulation Mode:** Interact with your content as a user would, directly from the Unity editor.  
+- **Testing in Mesh Emulation Mode:** Interact with your content as a user would, directly from the Unity editor.
 
 - **Manually authenticate in-experience:** Access secure content from within the experience by logging into your account and viewing content at runtime.
 
@@ -45,7 +45,7 @@ You can use WebSlates for:
 
 If you have a Unity project set up to [create Mesh Environments](../build-your-basic-environment/create-a-new-project-or-update.md), adding a WebSlate to your Environment is a straightforward process.
 
-In Mesh, WebSlate loads an interactive page through a provided URL. The URL given to it in the Environment will be the same one loaded in Mesh. In the Mesh Toolkit, the WebSlate prefab contains a URL parameter that developers can specify to control the content displayed in their Mesh Environment. 
+In Mesh, WebSlate loads an interactive page through a provided URL. The URL given to it in the Environment will be the same one loaded in Mesh. In the Mesh Toolkit, the WebSlate prefab contains a URL parameter that developers can specify to control the content displayed in their Mesh Environment.
 
 - When loaded on the Mesh App for PC and Quest, webpages loaded by a WebSlate are interactable through mouse, keyboard, and Quest XR controller input.
 
@@ -55,7 +55,7 @@ In Mesh, WebSlate loads an interactive page through a provided URL. The URL give
 
 - WebSlates can be configured with visual or cloud scripting to add interactive behaviors and synchronization across users.
 
-- WebSlate can display webpages and it supports interaction but doesn't function as a browser and doesn't support bookmark, history or travel back-forth. 
+- WebSlate can display webpages and it supports interaction but doesn't function as a browser and doesn't support bookmark, history or travel back-forth.
 
 - You can preview your WebSlate in your Unity project before uploading your scene to Mesh by pressing Play.
 
@@ -71,13 +71,14 @@ There are two flavors of WebSlate prefabs available in the Mesh Toolkit that you
 
 ### Add the WebSlate prefab from a menu
 
-**To add either of the prefabs to your scene**:  
+**To add either of the prefabs to your scene**:
+
 1. Right-click inside the **Hierarchy**, and then in the context menu, do one of the following:
 
-    **To add the clean WebSlate with no extra components**:  
+    **To add the clean WebSlate with no extra components**:
     Select **Mesh Toolkit** > **WebSlate**.
-    
-    **To the WebSlate with the stylized frame and extra features**:  
+
+    **To the WebSlate with the stylized frame and extra features**:
     Select **Mesh Toolkit** > **WebSlateFramed**.
 
 1. Add a URL to the WebSlate to display content.
@@ -116,7 +117,7 @@ To view a URL displayed in your WebSlate more quickly, you can use Mesh Emulatio
 
 To add Mesh Emulation Mode to your project, follow the instructions in the [Mesh Emulator article](../debug-and-optimize-performance/mesh-emulator.md).
 
-**To view your Web page in the WebSlate**:  
+**To view your Web page in the WebSlate**:
 Press the Unity editor Play button.
 
 ![Showcase both webslate prefabs in the Mesh Emulator.](../../media/webview-developer-guide/image011.png)
@@ -128,7 +129,7 @@ To enable interaction in the WebSlate, you have to set up a few things.
 1. Add the [Mesh Emulator](../debug-and-optimize-performance/mesh-emulator.md) to your scene to enable Mesh Emulation Mode.
 
 1. Create a new **Plane** GameObject. This will be your floor. Ensure the GameObject is positioned at the origin (0,0,0):
-    
+
     ![A screenshot of the Plane menu item.](../../media/webview-developer-guide/image015.png)
 
 1. Position the WebSlate so it sits in front of the *MeshEmulatorSetup* character:
@@ -197,15 +198,15 @@ For further guidance on the WebSlate node in Mesh Apps, see the [Visual scriptin
 
 - Since WebSlates don't have any external navigation UI by default, the best practice is to only load custom URLs, where the site navigation is cyclic and can be done inside the page. This can be done with a navigation sidebar or links to a hub page, for example.
 
-- The Content Performance Analyzer (CPA) tool includes a WebSlate analyzer which measures the average time it takes Unity's render pipeline to render WebSlates in a frame. 
+- The Content Performance Analyzer (CPA) tool includes a WebSlate analyzer which measures the average time it takes Unity's render pipeline to render WebSlates in a frame.
 
-    - Measurements are based on Unity's profiler recorder and require Play mode. The analyzer moves the camera over each WebSlate to collect sufficient profiler samples and calculates the average render time.
+  - Measurements are based on Unity's profiler recorder and require Play mode. The analyzer moves the camera over each WebSlate to collect sufficient profiler samples and calculates the average render time.
 
-    - This provides a first-stage, high-level analysis of WebSlate render times in the context of Unity's render pipeline. It doesn't provide the frame rate of the WebSlate content itself.
-  
-    - If Unity's render pipeline exceeds the threshold to render WebSlates (currently 10ms), the CPA tool provides a warning.
-  
-    - The same measurements are also available to the Performance Profiler. The group on the Performance Profiler typically changes colors from green to red when the budget allowance for a category is surpassed. For now, the WebSlate group only shows as green until a reasonable render time budget is rationalized for WebSlates.
+  - This provides a first-stage, high-level analysis of WebSlate render times in the context of Unity's render pipeline. It doesn't provide the frame rate of the WebSlate content itself.
+
+  - If Unity's render pipeline exceeds the threshold to render WebSlates (currently 10ms), the CPA tool provides a warning.
+
+  - The same measurements are also available to the Performance Profiler. The group on the Performance Profiler typically changes colors from green to red when the budget allowance for a category is surpassed. For now, the WebSlate group only shows as green until a reasonable render time budget is rationalized for WebSlates.
 
     ![WebSlate performance analysis using CPA tool.](../../media/webview-developer-guide/CPAwebslate.png)
 
@@ -221,13 +222,13 @@ For further guidance on the WebSlate node in Mesh Apps, see the [Visual scriptin
 
 ### WebSlate domain allow-list
 
-To ensure security against unintended URL-based attack vectors such as phishing, WebSlates by default restrict navigation to the URL's that are included under the domain of the first page loaded into the WebSlate. For example, a WebSlate launched on https://www.microsoft.com/ will only navigate to pages whose URL's start with "www.microsoft.com". While this ensures that users won't  accidentally diverge from the intended navigation flow, it can be an overly restrictive default for some use cases, such as user authentication, during which there may be redirections to subdomains or third-party authentication providers.
+To ensure security against unintended URL-based attack vectors such as phishing, WebSlates by default restrict navigation to the URL's that are included under the domain of the first page loaded into the WebSlate. For example, a WebSlate launched on <https://www.microsoft.com/> will only navigate to pages whose URL's start with "www.microsoft.com". While this ensures that users won't  accidentally diverge from the intended navigation flow, it can be an overly restrictive default for some use cases, such as user authentication, during which there may be redirections to subdomains or third-party authentication providers.
 
 The way to accomodate for these use cases is by adding domains to the WebSlate's allow list.
 
 ### Automatically add domains (recommended)
 
-When working with WebSlates in the Unity editor, you have the option to enable "Collect Allowed Domains". This will remove the domain navigation restriction so that you can navigate freely when running in Play mode to test your scenario. While you navigate in Play mode, the WebSlate will log the domains you visit in the background. 
+When working with WebSlates in the Unity editor, you have the option to enable "Collect Allowed Domains". This will remove the domain navigation restriction so that you can navigate freely when running in Play mode to test your scenario. While you navigate in Play mode, the WebSlate will log the domains you visit in the background.
 
 ![Collect allowed domains checkbox is enabled.](../../media/webview-developer-guide/allowed-domains-enabled.png)
 
