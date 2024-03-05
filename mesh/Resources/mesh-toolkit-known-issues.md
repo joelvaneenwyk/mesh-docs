@@ -1,29 +1,33 @@
 ---
-title: Known issues for Mesh Toolkit
-description: Mesh Toolkit active known issues
+title: Known issues for Mesh toolkit
+description: Mesh toolkit active known issues
 ms.service: mesh
 author: qianw211    
-ms.author: qianwen
-ms.date: 12/4/2023
+ms.author: vinnietieto
+ms.date: 2/12/2024
 ms.topic: Guide
-keywords: Microsoft Mesh, Mesh Toolkit, Mesh Developer
+keywords: Microsoft Mesh, Mesh toolkit, Mesh Developer
 ---
 
-# Active known issues - Mesh Toolkit
+# Active known issues - Mesh toolkit
 
-## Version 23.14
+## Version 5.2315.0
 
 * The embedded videos show as black on Quest 2. (24096)
 
     *Workaround:*  If you run into an issue where videos display and behave as expected on PC but not on Quest, add the video script to the video player.
 
-### Scripting
+### Events
 
-* Script graphs were saved with redundant type and versioning information in some object references. This will not visibly impact user experience. (30688)
+* You may not able to access **host tools** in an event template or customization session. Here are the steps to reproduce this issue: (33738)
 
-* The **Mesh Visual Scripting Diagnostics** panel only displays the diagnostics for the first selected `ScriptMachine` and errors were logged to the console panel if several were selected at the same time. (30873)
+    * Open your project in the Unity editor;
 
-* When the **Travel Point** is set up in isolation, not nested in an explicit **Travel Point Group**, and a reference to it is passed to the method or property node from another script node, for example, from a **Get Variable** node, the **Travel Point** reference is incorrectly filtered out at runtime and the method call or property access will fail to work. (31414)
+    * Join a customization session or event template;
+
+    * You'll find no **host tools** available;
+
+    * Add a screenshare, and you won't be able to access **host tools* to start the screenshare for validation.
 
 ### WebSlate
 
@@ -31,7 +35,7 @@ keywords: Microsoft Mesh, Mesh Toolkit, Mesh Developer
 
 * If loading too many WebSlates at once, lower-end computers may not be able to load all WebSlates; only some WebSlates will be loaded. We recommend that you use the [Content Performance Analyzer tool](../develop/debug-and-optimize-performance/cpa.md) to measure rendering time and determine the proper allocations based on your environment's features.
 
-- When working with WebSlate in the Unity editor, the editor needs to be restarted when updating the WebSlate or Mesh Toolkit packages through the Unity package manager.
+- When working with WebSlate in the Unity editor, the editor needs to be restarted when updating the WebSlate or Mesh toolkit packages through the Unity package manager.
 
 - The "Current URL" field of a WebSlate currently cannot be updated during Play mode.
 
@@ -54,9 +58,9 @@ Currently, animating the transforms of more than a couple of objects by setting 
 
 If you switch the focus from Unity to another app while Unity is playing, the Mesh Cloud Scripting Service continues to run, submitting messages to the message queue. When you switch the focus back to Unity, it pauses until it completely drains the queue. If the Mesh Cloud Scripting Service is making lots of frequent state changes and/or you have switched focus away from Unity for a long time, Unity can freeze for some time while this happens.
 
-### If scene doesn't contain at least one collider on a gameObject with 'NavMesh' layer, input in Mesh Browser might not work
+### If scene doesn't contain at least one collider on a gameObject set to the 'GroundCollision' layer, input in Mesh Browser might not work
 
-Changing floor or any platform game object's layer to 'NavMesh' is sufficient.
+Changing floor or any platform game object's layer to 'GroundCollision' is sufficient.
 
 #### Adding multiple lights as children of the same transform  will cause an error
 

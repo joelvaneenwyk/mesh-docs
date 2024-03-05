@@ -11,7 +11,7 @@ keywords: Microsoft Mesh, getting started, samples, toolkit, Mesh toolkit, tutor
 
 # Download Mesh samples
 
-The Mesh Toolkit samples repo on GitHub contains a variety of Mesh sample projects to inspire you about what you can build with Microsoft Mesh.
+The Mesh toolkit samples repo on GitHub contains a variety of Mesh sample projects to inspire you about what you can build with Microsoft Mesh.
 
 1. In your browser, go to GitHub, and then navigate to the [*Mesh-Toolkit-Unity* repository](https://github.com/microsoft/Mesh-Toolkit-Unity).
 
@@ -21,11 +21,13 @@ The Mesh Toolkit samples repo on GitHub contains a variety of Mesh sample projec
 
     ![______](../../../media/samples/007-code-and-download-zip.png)
 
-1. On your C: drive, create a folder with a one-word name (for example, "Mesh101") and then move or copy the downloaded Mesh Toolkit Zip file to that folder. This is done to avoid running into a problem with the Windows path length limit, which is 256 characters. **IMPORTANT**: *Don't* place the Zip file on the Windows desktop. Behind the scenes, this creates a very long path name.
+1. We recommend that you create a folder on your C: drive named "Mesh Samples" and then move or copy the downloaded Mesh toolkit Zip file to that folder. This is a good name for two reasons: it's short, so it avoids running into a problem with the Windows path length limit, which is 256 characters. Also, the Zip file contains a number of Mesh samples and this keeps them all in one place.
 
-    In the example below, the user created a folder on their C: drive named *Mesh101.* Next, they moved the downloaded Mesh Toolkit Zip file to the *Mesh101* folder
+    **IMPORTANT**: *Don't* place the Zip file on the Windows desktop. Behind the scenes, this creates a very long path name.
 
-    ![A screenshot of a computer Description automatically generated](../../../media/samples/008-toolkit-zip-in-folder.png)
+    In the example below, the user created a folder on their C: drive named *Mesh Samples.* Next, they moved the downloaded Mesh toolkit Zip file to the *Mesh Samples* folder.
+
+    ![A screenshot of the downloaded samples zip file in the Mesh 201 folder.](../../../media/get-started-developing-mesh/061-toolkit-folder.png)
 
 1. Unzip the samples Zip file into the same folder.
 

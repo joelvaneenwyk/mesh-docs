@@ -11,25 +11,20 @@ audience: admin
 keywords: Microsoft Mesh, M365, OCPS, Immersive spaces, Avatars, getting started, documentation, features
 ---
 
-# Set up Microsoft Mesh
+# Configure Microsoft Mesh
 
-In the Microsoft 365 Apps Admin Center admins can manage access to Mesh experiences. This covers access to the following experiences:
+> [!IMPORTANT]
+> In order to streamline the admin experience, admins will no longer need to configure Mesh in M365 Apps Admin Center. If you had previously restricted Mesh access to users or groups in your organization via the Mesh policy found in the M365 Apps Admin Center, you will need to switch to restricting access via the Mesh service plan instead in the M365 Admin Center (MAC).
+
+The Mesh app is by default available to all users in the M365 Admin Center. Admins can block the app for specific users or user groups by turning off the Microsoft Mesh service plan.
+
+This covers access to the following experiences:
 
 - Mesh app on PC
 - Mesh app on Quest 2
 - Mesh on the web
 
-By default, these Mesh experiences will be available to all users if a policy is not created to restrict access. Follow the [Configure Mesh in M365 Apps Admin Center](#optional-configure-mesh-in-m365-apps-admin-center) steps below to block specific groups or people.
-
-> [!NOTE]
-> All Mesh experiences are managed via one policy in the Microsoft 365 Apps Admin Center.
->
-> As an admin, you can configure the Mesh policy to manage which users and groups in your organization have access to the Mesh app on PC, the Mesh app on Quest 2, and Mesh on the web.
-
-To manage access, please visit the M365 Apps Admin Center and configure the policy for Mesh.
-
-   > [!div class="nextstepaction"]
-   > [M365 Apps Admin Center](https://config.office.com/officeSettings/)
+By default, these Mesh experiences will be available to all users if a service plan or policy does not restrict access. Follow the [Configure access to Mesh using service plans](#configure-access-to-mesh-using-service-plans) or [Configure access to Mesh using policies](#configure-access-to-mesh-using-service-plans) steps below to block specific groups or people.
 
 ## Prerequisites
 
@@ -43,44 +38,38 @@ To configure access to Mesh in your tenant, you must have one of the following r
 
 For help, see the [immersive spaces in mesh licensing Troubleshooting and FAQs](../../Resources/mesh-troubleshooting.md#what-are-the-license-requirements-for-immersive-spaces-in-mesh).
 
-## (Optional) Configure Mesh in M365 Apps Admin Center
+## Configure access to Mesh using service plans
 
 > [!IMPORTANT]
-> Mesh will be available to all users by default. Create a policy or update an existing one to block specific groups or people.
+> In order to streamline the admin experience, admins will no longer need to configure Mesh in M365 Apps Admin Center. If you had previously restricted Mesh access to users or groups in your organization via the Mesh policy found in the M365 Apps Admin Center, you will need to switch to restricting access via the Mesh service plan instead in the M365 Admin Center (MAC) by the end of February, 2024.
 
-1. Sign into [M365 Apps Admin Center](https://config.office.com/officeSettings/) with your Azure Active Directory account with admin privileges for the Microsoft 365 Admin Center.
-    > [!div class="nextstepaction"]
-   > [M365 Apps Admin Center](https://config.office.com/officeSettings/)
+1. Sign into [M365 Admin Center](https://admin.microsoft.com/) with an admin account with at least Global, License, or User level permissions and open the left navigation panel to the Users section.
 
-1. Navigate to the **Customization** > **Policy Management** in the left nav.
+    :::image type="content" source="../../media/m365-setup-guide/Left-nav-panel.png" alt-text="Screenshot of left nav panel in M365 admin center.":::
 
-    :::image type="content" source="../../media/m365-setup-guide/M365-policy-management.png" alt-text="Customization then policy management window in the M365 Apps Admin Center":::
+1. Select a user or group and select **Licenses and apps** to manage the user's or group's active licenses and service plans.
 
-1. Create or identify an existing policy for the users or groups of users that you would like to configure Mesh for. For more information on how to apply cloud policies to users and groups, see the [Overview of CLoud Policy service for Microsoft 365](/deployoffice/admincenter/overview-cloud-policy).
+    :::image type="content" source="../../media/m365-setup-guide/licenses-apps-selection.png" alt-text="Screenshot of licenses and apps section in M365 Admin Center.":::
 
-    Create a new policy by selecting **+ Create** then name the policy.
-1. Adjust the scope for this policy to determine who or what groups can access **all Mesh experiences**.
+1. Ensure that you have enabled the appropriate licenses for Microsoft Mesh in order for the service plan to show up in the **Apps** section.
 
-    To be clear, if this policy is a applied to a user, they will be able to access Mesh on Meta Quest 2, the Mesh app on PC, and Mesh on the web. If you do not configure this policy, users will have access to all three Mesh experiences.
+    :::image type="content" source="../../media/m365-setup-guide/Select-appropriate-apps-Microsoft-Mesh.png" alt-text="Screenshot of apps dropdown showing Microsoft Teams Premium.":::
 
-1. In the **Configure Settings** page, search for **Control user access to Microsoft Mesh experiences.**
+1. Toggle the Microsoft Mesh service plan off to disable Mesh for the selected user or group.
 
-    :::image type="content" source="../../media/m365-setup-guide/M365-configure-settings-policy-name.png" alt-text="Policy name for enabling Mesh experiences is Control user access to Microsoft Mesh experiences.":::
+For additional guidance for assigning licenses in M365, see:
 
-1. Select the policy and **Enable** or **Disable** it for users or groups of users in your organization.
+[Assign or unassign licenses for users in the Microsoft 365 admin center - Microsoft 365 admin | Microsoft Learn](/microsoft-365/admin/manage/assign-licenses-to-users?view=o365-worldwide)
 
-    :::image type="content" source="../../media/m365-setup-guide/OCPS-Enabled-policy-small.png" alt-text="Mesh access policy enabled" lightbox="../../media/m365-setup-guide/OCPS-Enabled-policy.png":::
-1. In the Review and publish page, review the policy that was created then select **Create** to publish.
+For more complex and larger group license management, you can do so in Entra ID:
 
-    :::image type="content" source="../../media/m365-setup-guide/m365-create-policy.png" alt-text="Create policy page in the MAC":::
+[Assign licenses to a group - Microsoft Entra ID | Microsoft Learn](/entra/identity/users/licensing-groups-assign)
 
-1. If successful, you should see the Policy configuration show up in the Policy Management page.
+## End user license agreement
 
-    :::image type="content" source="../../media/m365-setup-guide/m365-mesh-policy-enabled-successful.png" alt-text="Policy configuration for Mesh policy is successful created and visible in the Policy Management page":::
+Your users must enter a separate agreement directly with Microsoft to enable spatial audio for Mesh experiences. That agreement is presented to your users before the user's first use of Mesh. If a user does not wish to enter into that agreement, the user cannot use Mesh.
 
-## End user dialogue referenced in policy can be seen below
-
-Users will see an End User License Agreement dialogue in the upcoming release for Mesh products and data gathered from spatial audio as seen in the following image:
+If an admin does not agree to the license agreement terms, then admins can disable Mesh for users via Service Plans described above.
 
 :::image type="content" source="../../media/m365-setup-guide/EULA-agreemnet-small.png" alt-text="Screenshot of end user license agreement for Mesh and spatial audio." lightbox="../../media/m365-setup-guide/EULA-agreemnet.png":::
 

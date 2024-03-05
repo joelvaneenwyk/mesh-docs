@@ -2,16 +2,65 @@
 title: Release notes for Mesh
 description: Mesh release notes
 ms.service: mesh
-author: qianw211    
-ms.author: qianwen
-ms.date: 12/4/2023
+author: typride  
+ms.author: tmilligan
+ms.date: 02/18/2024
 ms.topic: Guide
 keywords: Microsoft Mesh, M365, Unity, API, release notes, reference, documentation, features, performance
 ---
 
 # Mesh release notes
 
-**Release notes and known issues for the Immersive spaces in Microsoft Mesh on PC & Quest 2**
+**Release notes for Microsoft Mesh on PC & Quest 2**
+
+## Version 5.2402.0 (Preview)
+
+### What's new
+
+* Presenters can now see their own screenshare when sharing content in Mesh. Previously, screenshared content was only visible to participants other than the presenter, requiring the presenter to navigate out of Mesh to see the content being shared.
+
+## Version 5.2401.0
+
+### Resolved product issues
+
+The following product issues have been fixed for this release:
+
+* Unexpected startup failure when launching Quest app related to conditional access now provides a more relevant error message: "Either your Quest device or Mesh app is currently blocked by your organization's AAD Conditional Access policies. Please contact your IT administrator for assistance."
+
+    This should provide more clarity when conditional access is blocking usage of the quest application, helping customers better understand why the app failed to load. (38252)
+
+## Version 5.2315.0
+
+### What's new
+
+* The new Microsoft Mesh trial license offering is now publicly available for enterprise customers to access Mesh for 6 months! For more information on how to sign up, see [IT admin-led trials for Microsoft Mesh](/mesh/setup/content/it-admin-led-trials). You can also find additional licensing requirements in [Troubleshooting and FAQ](/mesh/resources/mesh-troubleshooting).
+
+* Controls in the **Environment Editor** and the **Control Panel** are now ordered based on relevance or priority, so it's easier for users to find the controls they need.
+
+* If a user joins an event with a different tenant ID from that of the event organizer, we now show the following error dialog: **Join space from different tenant than the meeting owner is not allowed. Please use a different account to join this space.**
+
+* We have improved ambient indicators as to who is megaphoning, broadcasting, or screen sharing.
+
+    ![A screenshot showing the improved ambient indicators](media/ambient-indicators.png)
+
+### Mesh on the web
+
+Mesh on the web is moving to cloud.microsoft with the [Microsoft 365 apps and services](https://techcommunity.microsoft.com/t5/microsoft-365-blog/introducing-cloud-microsoft-a-unified-domain-for-microsoft-365/ba-p/3804961). Currently, we are providing two links for Mesh on the web to ensure a smooth transition. For the new [cloud.microsoft](https://mesh.cloud.microsoft) link, make sure you have allowed the proper endpoints. See [Preparing your organization](../Setup/Content/preparing-your-organization.md#ensure-endpoints-can-be-allowed-for-immersive-spaces-in-teams) for details.
+
+The two Mesh on the web links are:
+
+- Old: https://portal.mesh.microsoft.com 
+- New: https://mesh.cloud.microsoft
+
+If you have any issues with the new Mesh on the web experience, you can continue to use [portal.mesh.microsoft.com](https://portal.mesh.microsoft.com).
+
+### Resolved product issues
+
+The following product issues have been fixed for this release:
+
+* On Quest, the user is disconnected from an event if headset is removed. (25764)
+
+* Searching for co-organizers on the Invite page yields no results. (29365)
 
 ## Version 5.2314.0
 
